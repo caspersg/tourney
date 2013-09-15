@@ -13,20 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130915010603) do
 
-  create_table "fighters", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fights", force: true do |t|
-    t.integer  "winner_id"
-    t.integer  "loser_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"

@@ -3,6 +3,7 @@ require 'test_helper'
 class MicropostsControllerTest < ActionController::TestCase
   setup do
     @micropost = microposts(:one)
+    sign_in users(:two)
   end
 
   test "should get index" do

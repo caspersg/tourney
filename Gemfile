@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-gem 'devise'
+gem 'devise', '~> 3.1.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -40,6 +40,8 @@ group :development do
   gem 'sqlite3', '~> 1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
+  gem "better_errors", '~> 1.0.1'
+  gem "binding_of_caller"
 end
 
 group :development, :test do

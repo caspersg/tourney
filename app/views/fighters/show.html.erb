@@ -10,5 +10,23 @@
   <%= @fighter.points %>
 </p>
 
+<strong>Wins:</strong>
+<ul>
+  <% @fighter.wins.each do |fight| %>
+    <%= link_to fight_path(fight) do %>
+      <li>beat <%= fight.loser.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<strong>Losses:</strong>
+<ul>
+  <% @fighter.losses.each do |fight| %>
+    <%= link_to fight_path(fight) do %>
+      <li>beaten by <%= fight.winner.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_fighter_path(@fighter) %> |
 <%= link_to 'Back', fighters_path %>

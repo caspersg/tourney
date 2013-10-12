@@ -1,13 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Tournament:</strong>
+  <%= link_to tournament_path(@fight.tournament) do %>
+    <%= @fight.tournament.name %>
+  <% end %>
+</p>
+
+<p>
   <strong>Winner:</strong>
-  <%= @fight.winner_id %>
+  <%= link_to fighter_path(@fight.winner) do %>
+    <%= @fight.winner.name %>
+  <% end %>
 </p>
 
 <p>
   <strong>Loser:</strong>
-  <%= @fight.loser_id %>
+  <%= link_to fighter_path(@fight.loser) do %>
+    <%= @fight.loser.name %>
+  <% end %>
 </p>
 
 <p>
@@ -28,11 +39,6 @@
 <p>
   <strong>Loser after points:</strong>
   <%= @fight.loser_after_points %>
-</p>
-
-<p>
-  <strong>Tournament:</strong>
-  <%= @fight.tournament_id %>
 </p>
 
 <%= link_to 'Edit', edit_fight_path(@fight) %> |

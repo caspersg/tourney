@@ -20,6 +20,14 @@
   <%= @tournament.points_percentage %>
 </p>
 
+<ul>
+  <% @tournament.fights.each do |fight| %>
+    <%= link_to fight_path(fight) do %>
+      <li><%= fight.winner.name %> beat <%= fight.loser.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <%= link_to 'New Fight', new_fight_path %>
 
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |

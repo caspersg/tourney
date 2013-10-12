@@ -22,5 +22,7 @@ module TourneyApp
     
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.initialize_on_precompile = false
+
+    config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
   end
 end

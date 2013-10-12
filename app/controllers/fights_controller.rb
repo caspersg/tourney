@@ -25,6 +25,7 @@ class FightsController < ApplicationController
   # POST /fights.json
   def create
     @fight = Fight.new(fight_params)
+    @fight.set_results!
 
     respond_to do |format|
       if @fight.save
@@ -40,8 +41,12 @@ class FightsController < ApplicationController
   # PATCH/PUT /fights/1
   # PATCH/PUT /fights/1.json
   def update
+    result = @fight.update(fight_params)
+    @fight.set_results!
+    @fight.save!
+
     respond_to do |format|
-      if @fight.update(fight_params)
+      if @fight
         format.html { redirect_to @fight, notice: 'Fight was successfully updated.' }
         format.json { head :no_content }
       else

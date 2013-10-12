@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012051147) do
+ActiveRecord::Schema.define(version: 20131012062555) do
 
   create_table "fighters", force: true do |t|
     t.text     "name"
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20131012051147) do
   end
 
   create_table "tournaments", force: true do |t|
-    t.text     "name"
+    t.string   "name"
     t.date     "date"
     t.text     "description"
-    t.decimal  "points_percentage"
+    t.integer  "points_percentage"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

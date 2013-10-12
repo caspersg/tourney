@@ -7,11 +7,6 @@
     <% @fighters = Fighter.find(:all, :order => 'name') %>
     <%= f.association :winner, collection: @fighters %>
     <%= f.association :loser, collection: @fighters %>
-
-    <%= f.input :winner_before_points %>
-    <%= f.input :winner_after_points %>
-    <%= f.input :loser_before_points %>
-    <%= f.input :loser_after_points %>
   </div>
 
   <div class="form-actions">

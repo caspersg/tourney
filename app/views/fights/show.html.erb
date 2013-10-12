@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @fight.winner_id %>
+</p>
+
+<p>
+  <strong>Loser:</strong>
+  <%= @fight.loser_id %>
+</p>
+
+<p>
+  <strong>Winner before points:</strong>
+  <%= @fight.winner_before_points %>
+</p>
+
+<p>
+  <strong>Winner after points:</strong>
+  <%= @fight.winner_after_points %>
+</p>
+
+<p>
+  <strong>Loser before points:</strong>
+  <%= @fight.loser_before_points %>
+</p>
+
+<p>
+  <strong>Loser after points:</strong>
+  <%= @fight.loser_after_points %>
+</p>
+
+<p>
+  <strong>Tournament:</strong>
+  <%= @fight.tournament_id %>
+</p>
+
+<%= link_to 'Edit', edit_fight_path(@fight) %> |
+<%= link_to 'Back', fights_path %>

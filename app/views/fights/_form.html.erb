@@ -1,0 +1,17 @@
+<%= simple_form_for(@fight) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :winner_id %>
+    <%= f.input :loser_id %>
+    <%= f.input :winner_before_points %>
+    <%= f.input :winner_after_points %>
+    <%= f.input :loser_before_points %>
+    <%= f.input :loser_after_points %>
+    <%= f.input :tournament_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

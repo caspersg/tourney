@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924064012) do
+ActiveRecord::Schema.define(version: 20131012051147) do
 
   create_table "fighters", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+    t.text     "name"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -23,13 +23,20 @@ ActiveRecord::Schema.define(version: 20130924064012) do
   create_table "fights", force: true do |t|
     t.integer  "winner_id"
     t.integer  "loser_id"
+    t.integer  "winner_before_points"
+    t.integer  "winner_after_points"
+    t.integer  "loser_before_points"
+    t.integer  "loser_after_points"
+    t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "microposts", force: true do |t|
-    t.string   "content"
-    t.integer  "user_id"
+  create_table "tournaments", force: true do |t|
+    t.text     "name"
+    t.date     "date"
+    t.text     "description"
+    t.decimal  "points_percentage"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

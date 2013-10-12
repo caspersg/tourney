@@ -4,8 +4,10 @@
       <%= link_to "tourney app", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    root_path %></li>
+          <li><%= link_to 'Fighters', fighters_path %></li>
+          <li><%= link_to 'Tournaments', tournaments_path %></li>
           <li><%= link_to "Help",    help_path %></li>
+          <li><%= link_to "Profile",    edit_user_registration_path %></li>
           <%= render 'layouts/auth' %>
         </ul>
       </nav>

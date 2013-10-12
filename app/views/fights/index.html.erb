@@ -1,0 +1,39 @@
+<h1>Listing fights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Winner</th>
+      <th>Loser</th>
+      <th>Winner before points</th>
+      <th>Winner after points</th>
+      <th>Loser before points</th>
+      <th>Loser after points</th>
+      <th>Tournament</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fights.each do |fight| %>
+      <tr>
+        <td><%= fight.winner_id %></td>
+        <td><%= fight.loser_id %></td>
+        <td><%= fight.winner_before_points %></td>
+        <td><%= fight.winner_after_points %></td>
+        <td><%= fight.loser_before_points %></td>
+        <td><%= fight.loser_after_points %></td>
+        <td><%= fight.tournament_id %></td>
+        <td><%= link_to 'Show', fight %></td>
+        <td><%= link_to 'Edit', edit_fight_path(fight) %></td>
+        <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fight', new_fight_path %>
